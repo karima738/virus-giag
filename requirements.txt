@@ -1,0 +1,11 @@
+# --- Core scientific libraries ---
+numpy
+pandas
+scikit-learn
+
+# --- Optional utilities ---
+joblib
+
+# --- For development and testing ---
+matplotlib
+seaborn
