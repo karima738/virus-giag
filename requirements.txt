@@ -9,3 +9,6 @@ joblib
 # --- For development and testing ---
 matplotlib
 seaborn
+pytest
+flake8
+

@@ -2,6 +2,7 @@ from core.model import Model
 from sklearn.linear_model import LogisticRegression
 from core.loss import binary_cross_entropy_loss
 
+
 class LogisticRegressionModel(Model):
     def __init__(self):
         self.model = LogisticRegression()

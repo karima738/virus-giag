@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 class PatientDataset:
     def __init__(self, csv_path):
         self.data = pd.read_csv(csv_path)

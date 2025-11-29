@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class ClinicalPredictor:
     def __init__(self, trained_model):
         self.model = trained_model
