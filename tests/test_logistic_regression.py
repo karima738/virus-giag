@@ -3,7 +3,7 @@ from core.logistic_regression import LogisticRegressionModel
 
 
 def test_logistic_regression_train():
-    """Test que le modèle s'entraîne correctement et calcule une loss valide"""
+    """Test que le modèle s'entraîne correctement"""
     # Données de test simples
     X = np.random.rand(20, 3)
     y = np.random.randint(0, 2, 20)
@@ -13,9 +13,11 @@ def test_logistic_regression_train():
     model.train(X, y)
 
     # Vérifications
-    assert model.loss is not None, "La loss ne doit pas être None après l'entraînement"
+    assert model.loss is not None, (
+        "La loss ne doit pas être None après l'entraînement"
+    )
     assert model.loss >= 0, "La loss doit être positive ou nulle"
-    assert model.model is not None, "Le modèle sklearn doit être initialisé"
+    assert model.model is not None, "Le modèle sklearn initialisé"
 
 
 def test_logistic_regression_predict():
@@ -35,6 +37,12 @@ def test_logistic_regression_predict():
     preds = model.predict(X)
 
     # Vérifications
-    assert preds.shape == (4,), "Les prédictions doivent avoir la bonne forme"
-    assert len(preds) == len(X), "Nombre de prédictions doit égaler nombre d'exemples"
-    assert np.all(preds >= 0) and np.all(preds <= 1), "Les probabilités doivent être entre 0 et 1"
+    assert preds.shape == (4,), (
+        "Les prédictions doivent avoir la bonne forme"
+    )
+    assert len(preds) == len(X), (
+        "Nombre de prédictions doit égaler nombre d'exemples"
+    )
+    assert np.all(preds >= 0) and np.all(preds <= 1), (
+        "Les probabilités doivent être entre 0 et 1"
+    )
