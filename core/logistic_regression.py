@@ -1,5 +1,5 @@
-from core.model import Model
 from sklearn.linear_model import LogisticRegression
+from core.model import Model
 from core.loss import binary_cross_entropy_loss
 
 
@@ -16,3 +16,7 @@ class LogisticRegressionModel(Model):
 
     def predict(self, X):
         return self.model.predict_proba(X)[:, 1]
+
+
+class LogisticRegressionGD:
+    pass
