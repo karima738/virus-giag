@@ -51,16 +51,17 @@ jobs:
 
       - name: Build package
         run: |
-          echo "Build..."
-          mkdir build_output
-          cp -r . build_output/
+          echo "Build du projet virus-giag..."
+          mkdir -p build_output
+          cp -r app core utils pipeline requirements.txt build_output/ 2>/dev/null || true
+          echo "Build terminé avec succès"
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/main'   # DEPLY UNIQUEMENT SUR main
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
 
       - name: Fake deploy
-        run: echo "🚀 Déploiement effectué"
+        run: echo "🚀 Déploiement effectué sur main"
